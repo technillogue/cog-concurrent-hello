@@ -1,6 +1,8 @@
 build:
+    gpu: false
     python_version: 3.11
     run:
-        - ln -sf $(which echo) $(which cog)
+        - ln -sf $(which echo) $(which pip)
 predict: predict.py:Predictor
-concurrency: 2
+concurrency:
+    max: 64
